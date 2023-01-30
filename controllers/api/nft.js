@@ -14,15 +14,15 @@ class NFTController {
       console.log('nft',nft);
       if (nft) {
         res.setHeader('Content-Type', 'image/svg+xml');
-        if (type === 'item') {
-          res.render('layouts/item', {
-            ...nft,
-            layout: 'item.hbs',
-            color: nft?.primary_color || '#FFD011',
-            width: width,
-            height: height
-        })
-        }
+        // if (type === 'item') {
+        //   res.render('layouts/item', {
+        //     ...nft,
+        //     layout: 'item.hbs',
+        //     color: nft?.primary_color || '#FFD011',
+        //     width: width,
+        //     height: height
+        // })
+        // }
         if (type === 'avatar') {
           nft['glow_color'] = nft.primary_color.replace(')', ', 0.5)').replace('rgb', 'rgba');
           res.render('layouts/avatar', {
